@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você, Meu Amor</title>
+    <style>
+        body {
+            background-color: #ffccff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1 {
+            animation: fade 3s;
+            font-size: 2.8em;
+            margin: 10px;
+        }
+        p {
+            font-size: 1.4em;
+            margin: 15px 0;
+            animation: slide 2s;
+        }
+        #timer {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #ff3366;
+        }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slide {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .heart {
+            font-size: 4em;
+            color: red;
+            animation: bounce 1.2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .btn {
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #ff66b3;
+            transform: scale(1.05);
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hearts div {
+            position: absolute;
+            font-size: 2em;
+            animation: fall 7s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart" aria-label="Coração">❤️</div>
+    <h1>OIIII gatinha!</h1>
+    <p>Espero q eu consiga tirar um sorriso do seu rostinho lindo😁(é bemmmmmm gay)</p>
+    
+    <div id="timer">Contador: 0 dias, 0 horas, 0 minutos e 0 segundos</div>
+
+    <button class="btn" onclick="location.href='mensagem.html'">Clique aqui e sorria!</button>
+    
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = 3 + Math.random() * 5 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        function updateTimer() {
+            const startDate = new Date('2024-06-09T00:00:00');
+            const now = new Date();
+            const diff = Math.floor((now - startDate) / 1000);
+
+            const days = Math.floor(diff / (3600 * 24));
+            const hours = Math.floor((diff % (3600 * 24)) / 3600);
+            const minutes = Math.floor((diff % 3600) / 60);
+            const seconds = diff % 60;
+
+            document.getElementById('timer').innerHTML = 
+                `Desde 09/06/2024: ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        // Cria corações continuamente a cada 300ms
+        setInterval(createHeart, 300);
+        setInterval(updateTimer, 1000); // Atualiza o cronômetro a cada segundo
+        updateTimer(); // Inicializa o cronômetro
+    </script>
+</body>
+</html>

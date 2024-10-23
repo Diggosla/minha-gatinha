@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Especial</title>
+    <style>
+        body {
+            background-color: #ffccff; /* Fundo rosa */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh; /* Altura total da janela */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            text-align: center;
+            transition: all 0.5s ease;
+            margin-top: 100px; /* Empurra o conteúdo para baixo */
+            position: relative; /* Adiciona posição relativa */
+            overflow-y: auto; /* Permite rolagem vertical */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            max-width: 90%;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 20px 0;
+        }
+
+        .btn:hover {
+            background-color: #ff66b3;
+            transform: scale(1.05);
+        }
+
+        #timer {
+            font-size: 1.5em;
+            margin: 30px 0;
+            color: #ff3366;
+        }
+
+        #music {
+            margin-top: 30px;
+            font-size: 1em;
+        }
+
+        #likes {
+            display: none;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #ff3366;
+            max-width: 90%;
+            text-align: left;
+        }
+
+        #loveNote {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #ff3366;
+        }
+
+        #timeTravelImage {
+            cursor: pointer;
+            width: 100%; /* Ajuste para largura total */
+            max-width: 400px; /* Limite a largura máxima */
+            margin-top: 30px;
+        }
+
+        #timeTravelContent {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #secondVideo {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #surpriseButton {
+            display: none;
+            font-size: 1.5em;
+            background-color: #ff3366;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #surpriseButton:hover {
+            transform: scale(1.1);
+        }
+
+        #surpriseContent {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #surpriseImage {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%; /* Ajuste para largura total */
+            height: auto; /* Manter proporção */
+        }
+
+        /* Animação para corações */
+        .heart {
+            position: absolute;
+            top: -50px; /* Começa acima da tela */
+            font-size: 30px; /* Tamanho do coração */
+            animation: fall 3s linear forwards;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh); /* Faz o coração cair até o fundo da tela */
+                opacity: 0; /* Diminui a opacidade ao cair */
+            }
+        }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+
+            #timer {
+                font-size: 1.2em;
+            }
+
+            #loveNote {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Você é incrível!</h1>
+
+    <div id="timer">Contador: 0 dias, 0 horas, 0 minutos e 0 segundos</div>
+
+    <p>Obrigado por ser quem você é! Você ilumina minha vida! 🌟</p>
+
+    <div id="music">
+        <audio autoplay="autoplay" controls="controls">
+            <source src="musica/Gorilla Roxo.mp3" type="audio/mp3" />
+           
+            </audio>
+    </div>
+
+    <p id="textinho">
+        O dia em que nos conhecemos, 09/06/2005, é, sem dúvida, o meu dia favorito! Lembro-me perfeitamente do seu
+        sorriso iluminando o ambiente pela primeira vez, e esse momento está gravado na minha memória como se tivesse
+        acontecido ontem. Quem diria que naquele dia a gente ia se tornar tão próximos? Mas eu já sabia, desde o
+        primeiro momento, que você era o amor da minha vida. Desde aquele instante mágico, minha vida mudou para
+        sempre de uma maneira que eu nunca poderia imaginar. Cada risada que compartilhamos, cada olhar trocado, cada
+        abraço apertado e cada beijo que demos se tornaram memórias preciosas que guardo com todo carinho. A conexão
+        que temos é única, e eu valorizo cada pequeno detalhe do nosso relacionamento. Às vezes, sei que posso ser um
+        pouco chato, mas saiba que estou sempre dando o meu melhor por você! Com você, meu sorriso é o mais verdadeiro.
+        É como se todas as partes de mim se encaixassem e eu pudesse ser quem realmente sou. Você pode não perceber,
+        mas o seu sorriso é verdadeiramente lindo, e eu amo cada traço seu, cada peculiaridade que faz de você quem
+        é. Sabe qual é o meu segredo sobre o que mais me encanta em você? É algo que vai além da sua beleza; é a
+        essência do seu ser. Clique no botão abaixo para descobrir o que eu adoro em você e vamos celebrar juntos a
+        história que estamos construindo!
+    </p>
+
+    <button class="btn" onclick="showLikes()">Clique aqui!</button>
+
+    <div id="likes">
+        <h2>Coisas que eu amo em você:</h2>
+        <ul>
+            <li>Seu sorriso radiante que ilumina meu dia.</li>
+            <li>O seu cabelo.</li>
+            <li>Como você faz todo mundo ao seu redor sorrir.</li>
+            <li>Seu brilho no olhar.</li>
+            <li>Seu olhar que transmite paz e amor.</li>
+            <li>Suas risadas.</li>
+            <li>Seu nariz.</li>
+            <li>Suas bochechas.</li>
+            <li>Seu sorriso.</li>
+            <li>Seu corpo.</li>
+            <li>Sua bunda 🤤🤤.</li>
+            <li>Cada pequeno momento que passamos juntos.</li>
+            <li>Estar com você melhora 100% meu dia.</li>
+            <li>Eu amo tudo em você; cada detalhe seu é maravilhoso pra mim.</li>
+        </ul>
+    </div>
+
+    <p id="loveNote">Eu te amo muito, minha princesa linda! ❤️</p>
+
+    <img id="timeTravelImage" src="img/ela.jpg" alt="Voltar no Tempo" onclick="showTimeTravel()" />
+
+    <div id="timeTravelContent">
+        <video width="100%" controls>
+            <source src="img/video1.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+        <button class="btn" onclick="showSecondVideo()">Par2</button>
+        <div id="secondVideo">
+            <video width="100%" controls onclick="showSurpriseButton()">
+                <source src="img/video2.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+    </div>
+
+    <button id="surpriseButton" onclick="showSurpriseContent()">SURPRESA!!!</button>
+
+    <div id="surpriseContent">
+        <img id="surpriseImage" src="img/nos.jpg" alt="Mensagem Especial" />
+        <p>Obrigado por ser essa garota incrível, meu amor! Eu te amo muito! Obrigado por estar sempre comigo. 🥰</p>
+    </div>
+    <button class="btn" onclick="location.href='index.html'">Voltar</button>
+    <script>
+        let targetDate = new Date("2024-06-09T00:00:00").getTime();
+
+        function updateTimer() {
+            const startDate = new Date('2024-06-09T00:00:00');
+            const now = new Date();
+            const diff = Math.floor((now - startDate) / 1000);
+
+            const days = Math.floor(diff / (3600 * 24));
+            const hours = Math.floor((diff % (3600 * 24)) / 3600);
+            const minutes = Math.floor((diff % 3600) / 60);
+            const seconds = diff % 60;
+
+            document.getElementById('timer').innerHTML = 
+                `Desde 09/06/2024: ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        function showLikes() {
+            document.getElementById('likes').style.display = 'block';
+        }
+
+        function showTimeTravel() {
+            document.getElementById('timeTravelContent').style.display = 'block';
+        }
+
+        function showSecondVideo() {
+            document.getElementById('secondVideo').style.display = 'block';
+            document.getElementById('surpriseButton').style.display = 'block';
+        }
+
+        function showSurpriseButton() {
+            document.getElementById('surpriseButton').style.display = 'block';
+        }
+
+        function showSurpriseContent() {
+            document.body.style.opacity = 0; // Animação de desaparecimento
+            setTimeout(() => {
+                document.getElementById('timeTravelContent').style.display = 'none';
+                document.getElementById('secondVideo').style.display = 'none';
+                document.getElementById('surpriseButton').style.display = 'none';
+                document.getElementById('surpriseImage').style.display = 'block';
+                document.getElementById('surpriseContent').style.display = 'flex';
+                document.body.style.opacity = 1; // Animação de reaparecimento
+            }, 500);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️'; // Emoji de coração
+            heart.style.left = Math.random() * 100 + 'vw'; // Posição horizontal aleatória
+            document.body.appendChild(heart);
+
+            // Remove o coração após a animação
+            setTimeout(() => {
+                heart.remove();
+            }, 3000); // Tempo para remover o coração após a animação
+        }
+
+        // Gera corações a cada 500ms
+        setInterval(createHeart, 500);
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+
+</html>
